@@ -6,12 +6,15 @@
 int main(int argc, char *argv[]) {
 	
 	int i = 10;
-	char c = 69;
-	float f = 12.3;
+	char c = 'a';
 	
-	printf("i: %i %p \n", &i, &i);
-    printf("c: %i %p \n", &c, &c);
-    printf("f: %i %p \n", &f, &f);
+	int*iptr = &i;
+	char*cptr = &c;
+	int*iptr2 = iptr;
+	
+	printf("i: %i %p \n%p (size:%i)\n", iptr, &i,sizeof(iptr));
+    printf("c: %i %p \n%p (size:%i)\n", cptr, &c, sizeof(cptr));
+    printf("iptr2: %p, %i\n", iptr2, *iptr2);
     
 	return 0;
 }
