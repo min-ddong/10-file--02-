@@ -5,16 +5,25 @@
 
 int main(int argc, char *argv[]) {
 	
-	int i = 10;
-	char c = 'a';
+	int i ;
+	int grade[5];
+	int sum=0;
+	int *ptr;
 	
-	int*iptr = &i;
-	char*cptr = &c;
-	int*iptr2 = iptr;
-	
-	printf("i: %i %p \n%p (size:%i)\n", iptr, &i,sizeof(iptr));
-    printf("c: %i %p \n%p (size:%i)\n", cptr, &c, sizeof(cptr));
-    printf("iptr2: %p, %i\n", iptr2, *iptr2);
-    
+	for (i=0;i<5;i++)
+	    {
+	    	ptr = grade+i;
+	    	printf("grade[%i] = ", i);
+	    	scanf("%d", ptr);
+		}
+		
+		for (i=0;i<5;i++)
+		   {
+		   	ptr = &grade[i];
+		   	sum+= *ptr;
+		   	printf("grade[%d] = %d\n", i, *ptr);
+		   }
+		   
+		   printf("average : %i\n", sum/5);
 	return 0;
 }
